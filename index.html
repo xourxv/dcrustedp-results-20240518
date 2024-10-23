@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examination Wing - Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+        #container {
+            margin-top: 100px;
+        }
+        .header {
+            color: green;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .subheader {
+            color: red;
+            margin: 10px;
+        }
+        #login-form {
+            display: inline-block;
+            text-align: left;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkblue;
+        }
+        .captcha {
+            margin-top: 10px;
+        }
+        .bottom-links {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        .bottom-links a {
+            color: blue;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+            display: none; /* Initially hidden */
+        }
+    </style>
+    <script>
+        function validateLogin(event) {
+            event.preventDefault(); // Prevent the form from submitting automatically
+
+            // Hard-coded username and password (your preferred credentials)
+            var correctUsername = "23011001088"; // Replace with your username
+            var correctPassword = "sourav@321"; // Replace with your password
+
+            // Get the entered username and password from the form
+            var enteredUsername = document.getElementById("username").value;
+            var enteredPassword = document.getElementById("password").value;
+
+            // Error message element
+            var errorMessage = document.getElementById("error-message");
+
+            // Check if entered credentials match the correct ones
+            if (enteredUsername === correctUsername && enteredPassword === correctPassword) {
+                // Redirect to the dashboard page if credentials are correct
+                window.location.href = "web.html";
+            } else {
+                // Show error message if credentials are incorrect
+                errorMessage.style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <div id="container">
+        <img src="logo.png" alt="University Logo" class="logo"> <!-- Add your logo here -->
+        <div class="header">Deenbandhu Chhotu Ram University of Science and Technology Murthal Sonepat</div>
+        <div class="subheader">स्वच्छ हरियाणा, स्वच्छ भारत; बेटी बचाओ, बेटी पढ़ाओ एवं डिजिटल हरियाणा, डिजिटल भारत के लिए हम सभी क्रियाशील हैं।</div>
+
+        <form id="login-form" onsubmit="validateLogin(event)">
+            <label for="login-type">Welcome - Enter your login details</label>
+            <select id="login-type">
+                <option value="student">Select</option>
+                <option value="student">Student</option>
+                <option value="admin">Admin</option>
+            </select>
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <div class="captcha">
+                <input type="checkbox" id="captcha"> I'm not a robot
+            </div>
+            <button type="submit">LOGIN</button>
+            <div id="error-message" class="error">Incorrect username or password</div>
+            <div class="bottom-links">
+                <a href="#">New Registration</a>
+                <a href="#">Forget Password?</a>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #0066cc;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        .navbar {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .navbar button {
+            background-color: #003366;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .navbar button:hover {
+            background-color: #002244;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to Examination Wing</h1>
+    </div>
+    
+    <div class="navbar">
+        <button onclick="window.location.href='result.html'">RESULT</button>
+        <button disabled>Apply Online Reappear Examination</button>
+        <button disabled>Examination Rules</button>
+        <button disabled>Revaluation</button>
+        <button disabled>Inspection of Answer Book</button>
+        <button onclick="window.location.href='logout.html'">Logout</button>
+    </div>
+</body>
+</html>
